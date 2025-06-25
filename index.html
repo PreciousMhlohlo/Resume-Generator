@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Resume Builder</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Aptos:opsz,wght@8..72,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>AI Resume Builder</h1>
+    <p>Create a customized, ATS-friendly resume powered by AI.</p>
+  </header>
+  <main>
+    <div class="main-left">
+      <form id="resume-form">
+        <!-- Personal Info -->
+        <section>
+          <h2>Personal Information</h2>
+          <input type="text" name="name" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="text" name="phone" placeholder="Phone Number">
+          <input type="text" name="location" placeholder="Location">
+        </section>
+        <section>
+          <h2>Work Experience</h2>
+          <textarea name="workExperience" placeholder="Describe your work experience"></textarea>
+        </section>
+        <section>
+          <h2>Education</h2>
+          <textarea name="education" placeholder="Describe your education"></textarea>
+        </section>
+        <section>
+          <h2>Skills</h2>
+          <input type="text" name="skills" placeholder="e.g. JavaScript, Project Management">
+        </section>
+        <section>
+          <h2>Target Job Description</h2>
+          <textarea name="jobDescription" placeholder="Paste job description here"></textarea>
+        </section>
+        <button type="submit">Generate Resume</button>
+      </form>
+      <section id="resume-preview">
+        <h2>Preview</h2>
+        <div id="preview-content" contenteditable="true"></div>
+        <button id="export-pdf">Export PDF</button>
+        <button id="export-docx">Export DOCX</button>
+        <button id="export-html">Export HTML</button>
+      </section>
+    </div>
+    <aside id="template-selector">
+      <h3>Choose a Template</h3>
+      <button data-template="1">Normal</button>
+      <button data-template="2">Formal</button>
+      <button data-template="3">Creative</button>
+    </aside>
+  </main>
+  <script src="app.js"></script>
+  <!-- For PDF export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- For Word export -->
+  <script src="https://unpkg.com/html-docx-js/dist/html-docx.js"></script>
+</body>
+</html> 
